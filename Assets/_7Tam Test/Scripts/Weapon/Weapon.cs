@@ -6,6 +6,8 @@ public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] protected Ammo _ammoPrefab;
     [field: SerializeField] public bool IsSingleHanded { get; private set; }
+    [field: SerializeField] public float Radius { get; private set; }
+
     protected IObjectPool<Ammo> _ammoPool;
     protected Transform _muzzlePoint;
     private const int MAX_POOL_SIZE = 10;

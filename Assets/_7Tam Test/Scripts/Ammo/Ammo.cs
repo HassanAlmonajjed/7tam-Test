@@ -6,6 +6,7 @@ public class Ammo : MonoBehaviour
     [SerializeField] private float _speed;
 
     private Rigidbody2D _rigidbody;
+    public Weapon Weapon { get; set; }
 
     private void Awake()
     {
@@ -15,6 +16,11 @@ public class Ammo : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Weapon.RemoveAmmo(this);
     }
 
     private void Move()

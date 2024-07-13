@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private Ammo _ammoPrefab;
-
+    [field: SerializeField] public bool IsSingleHanded { get; private set; }
     public IObjectPool<Ammo> _ammoPool;
     private Transform _muzzlePoint;
     private const int MAX_POOL_SIZE = 10;

@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
-    public Vector2 _moveInput;
+    public Vector2 Movement {  get; private set; }
 
-    public void OnMove(InputValue input) => _moveInput = input.Get<Vector2>();
+    public void OnMove(InputValue input) => Movement = input.Get<Vector2>();
 }

@@ -2,21 +2,28 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private Ammo _ammoPrefab;
+    [SerializeField] protected Ammo _ammoPrefab;
     [field: SerializeField] public bool IsSingleHanded { get; private set; }
-    public IObjectPool<Ammo> _ammoPool;
-    private Transform _muzzlePoint;
+    protected IObjectPool<Ammo> _ammoPool;
+    protected Transform _muzzlePoint;
     private const int MAX_POOL_SIZE = 10;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _ammoPool = new ObjectPool<Ammo>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, 10, MAX_POOL_SIZE);
         _muzzlePoint = transform.Find("Muzzle Point"); 
     }
 
-    public void Fire()
+    public abstract void Fire();
+
+    public void RemoveAmmo(Ammo ammo)
+    {
+        _ammoPool.Release(ammo);
+    }
+
+    protected void GetAmmo()
     {
         Ammo ammo = _ammoPool.Get();
         ammo.transform.SetPositionAndRotation(
@@ -24,11 +31,6 @@ public class Weapon : MonoBehaviour
             transform.root.rotation);
 
         ammo.Weapon = this;
-    }
-
-    public void RemoveAmmo(Ammo ammo)
-    {
-        _ammoPool.Release(ammo);
     }
 
     private void OnDestroyPoolObject(Ammo ammo) => Destroy(ammo.gameObject);

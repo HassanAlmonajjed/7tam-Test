@@ -25,6 +25,11 @@ namespace SevenTamTest
             if (_isFiring)
                 return;
 
+            if (Time.time < _nextFireTime)
+                return;
+
+            _nextFireTime = Time.time + (1 / _fireRate);
+
             StartCoroutine(FireRoutine());
 
             IEnumerator FireRoutine()

@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ammoPrefab: {fileID: -7644178622135207977, guid: 644aa9ca3f9495e4ebf9ac86d3cfbf7e, type: 3}
+  _fireRate: 2
   <IsSingleHanded>k__BackingField: 1
   <Radius>k__BackingField: 5
 --- !u!1 &8571857386256482446

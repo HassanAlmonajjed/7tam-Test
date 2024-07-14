@@ -5,6 +5,7 @@ namespace SevenTamTest
 {
     public abstract class Weapon : MonoBehaviour
     {
+        [Header("Weapon")]
         [SerializeField] protected Ammo _ammoPrefab;
         [SerializeField] protected float _fireRate;
         [field: SerializeField] public bool IsSingleHanded { get; private set; }

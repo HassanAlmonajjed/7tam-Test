@@ -1,31 +1,39 @@
 using UnityEngine;
 
-[RequireComponent (typeof(Rigidbody2D))]
-public class Ammo : MonoBehaviour
+namespace SevenTamTest
 {
-    [SerializeField] private float _speed;
-
-    private Rigidbody2D _rigidbody;
-    public Weapon Weapon { get; set; }
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class Ammo : MonoBehaviour
     {
-        _rigidbody = GetComponent<Rigidbody2D>();    
-    }
+        [SerializeField] private float _speed;
+        [SerializeField] private int _damage;
 
-    private void FixedUpdate()
-    {
-        Move();
-    }
+        private Rigidbody2D _rigidbody;
+        public Weapon Weapon { get; set; }
+        public Vector3 Direction { get; set; }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Weapon.RemoveAmmo(this);
-    }
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody2D>();
+        }
 
-    private void Move()
-    {
-        Vector3 newPosition = transform.position + (_speed * Time.fixedDeltaTime * transform.up);
-        _rigidbody.MovePosition(newPosition);
+        private void FixedUpdate()
+        {
+            Move();
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            //if (collision.TryGetComponent(out IDamegable damegable))
+            //    damegable.TakeDamage(_damage);
+
+            //Weapon.RemoveAmmo(this);
+        }
+
+        private void Move()
+        {
+            Vector3 newPosition = transform.position + (_speed * Time.fixedDeltaTime * transform.up);
+            _rigidbody.MovePosition(newPosition);
+        }
     }
 }

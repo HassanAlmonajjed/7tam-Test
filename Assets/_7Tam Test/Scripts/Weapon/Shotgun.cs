@@ -1,53 +1,40 @@
 using UnityEngine;
-using System.Collections;
 
 namespace SevenTamTest
 {
     public class Shotgun : Weapon
     {
-        [Tooltip("the number of bullets fired at the same time when player hit fire button")]
+        [Header("Shotgun")]
         [SerializeField] private int _burstAmount;
 
-        [SerializeField] private float _burstSpeed;
-
-        private bool _isFiring;
-        private WaitForSeconds _waitBetweenBullets;
-
-        protected override void Awake()
-        {
-            base.Awake();
-
-            _waitBetweenBullets = new(1 / _burstSpeed);
-        }
+        [Range(45, 180f)]
+        [SerializeField] private int _range;
 
         public override void Fire()
         {
-            if (_isFiring)
-                return;
-
             if (Time.time < _nextFireTime)
                 return;
 
             _nextFireTime = Time.time + (1 / _fireRate);
 
-            StartCoroutine(FireRoutine());
+            float angleStep = _range / (_burstAmount - 1);
+            float startAngle = (-_range / 2) + 90;
 
-            IEnumerator FireRoutine()
+            for (int i = 0; i < _burstAmount; i++)
             {
-                _isFiring = true;
+                float currentAngle = startAngle + i * angleStep;
 
-                for (int i = 0; i < _burstAmount; i++)
-                {
-                    GetAmmo();
+                float currentAngleRad = currentAngle * Mathf.Deg2Rad;
 
-                    yield return _waitBetweenBullets;
-                }
-                
+                Vector3 direction = new(Mathf.Cos(currentAngleRad), Mathf.Sin(currentAngleRad), 0);
+                direction = transform.root.rotation * direction;
+                Ammo ammo = _ammoPool.Get();
 
-                _isFiring = false;
+                ammo.transform.position = _muzzlePoint.position;
+                ammo.transform.up = direction;
+
+                ammo.Weapon = this;
             }
         }
-
-
     }
 }

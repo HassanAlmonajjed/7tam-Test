@@ -9,7 +9,13 @@ namespace SevenTamTest
             if (Time.time < _nextFireTime)
                 return;
 
-            GetAmmo();
+            Ammo ammo = _ammoPool.Get();
+            ammo.transform.SetPositionAndRotation(
+                _muzzlePoint.position,
+                transform.root.rotation);
+
+            ammo.Weapon = this;
+
             _nextFireTime = Time.time + (1 / _fireRate);
         }
     }

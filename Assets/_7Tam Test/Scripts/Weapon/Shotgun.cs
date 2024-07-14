@@ -18,21 +18,29 @@ namespace SevenTamTest
             _nextFireTime = Time.time + (1 / _fireRate);
 
             float angleStep = _range / (_burstAmount - 1);
+
             float startAngle = (-_range / 2) + 90;
 
             for (int i = 0; i < _burstAmount; i++)
             {
+                Vector3 direction = CalculateDirection(angleStep, startAngle, i);
+                GenerateBullet(direction);
+            }
+
+            Vector3 CalculateDirection(float angleStep, float startAngle, int i)
+            {
                 float currentAngle = startAngle + i * angleStep;
-
                 float currentAngleRad = currentAngle * Mathf.Deg2Rad;
-
                 Vector3 direction = new(Mathf.Cos(currentAngleRad), Mathf.Sin(currentAngleRad), 0);
                 direction = transform.root.rotation * direction;
-                Ammo ammo = _ammoPool.Get();
+                return direction;
+            }
 
+            void GenerateBullet(Vector3 direction)
+            {
+                Ammo ammo = _ammoPool.Get();
                 ammo.transform.position = _muzzlePoint.position;
                 ammo.transform.up = direction;
-
                 ammo.Weapon = this;
             }
         }

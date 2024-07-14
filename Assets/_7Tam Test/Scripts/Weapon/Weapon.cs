@@ -30,16 +30,6 @@ namespace SevenTamTest
             _ammoPool.Release(ammo);
         }
 
-        protected void GetAmmo()
-        {
-            Ammo ammo = _ammoPool.Get();
-            ammo.transform.SetPositionAndRotation(
-                _muzzlePoint.position,
-                transform.root.rotation);
-
-            ammo.Weapon = this;
-        }
-
         private void OnDestroyPoolObject(Ammo ammo) => Destroy(ammo.gameObject);
 
         private void OnReturnedToPool(Ammo ammo) => ammo.gameObject.SetActive(false);

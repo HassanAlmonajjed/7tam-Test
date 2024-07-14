@@ -136,3 +136,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
+  _bloodVFX: {fileID: 8812744342321682880, guid: 3bd08c75e84e39241a9fe05ad376a066, type: 3}
+  _guts: {fileID: 21300000, guid: 0a2faf214049e40adbced366e1487782, type: 3}

@@ -10,7 +10,6 @@ namespace SevenTamTest
 
         private Rigidbody2D _rigidbody;
         public Weapon Weapon { get; set; }
-        public Vector3 Direction { get; set; }
 
         private void Awake()
         {
@@ -24,10 +23,10 @@ namespace SevenTamTest
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            //if (collision.TryGetComponent(out IDamegable damegable))
-            //    damegable.TakeDamage(_damage);
+            if (collision.TryGetComponent(out IDamegable damegable))
+                damegable.TakeDamage(_damage);
 
-            //Weapon.RemoveAmmo(this);
+            Weapon.RemoveAmmo(this);
         }
 
         private void Move()

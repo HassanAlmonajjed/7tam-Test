@@ -45,6 +45,16 @@ namespace SevenTamTest
 
 
                 _isFiring = false;
+
+                void GetAmmo()
+                {
+                    Ammo ammo = _ammoPool.Get();
+                    ammo.transform.SetPositionAndRotation(
+                        _muzzlePoint.position,
+                        transform.root.rotation);
+
+                    ammo.Weapon = this;
+                }
             }
         }
     }

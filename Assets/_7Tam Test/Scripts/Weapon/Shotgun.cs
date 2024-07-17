@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 namespace SevenTamTest
@@ -43,6 +44,16 @@ namespace SevenTamTest
                 ammo.transform.up = direction;
                 ammo.Weapon = this;
             }
+        }
+
+        protected override void OnDrawGizmosSelected()
+        {
+            base.OnDrawGizmosSelected();
+
+            float startAngle = ((_range / 2) + 90) * Mathf.Deg2Rad;
+            Vector3 direction = new(Mathf.Cos(startAngle), Mathf.Sin(startAngle), 0);
+            Handles.color = Color.green;
+            Handles.DrawSolidArc(transform.position, -transform.forward, direction, _range, Radius);
         }
     }
 }

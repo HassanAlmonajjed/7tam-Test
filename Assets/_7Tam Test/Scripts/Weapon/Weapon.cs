@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -21,6 +22,11 @@ namespace SevenTamTest
         {
             _ammoPool = new ObjectPool<Ammo>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject, false, 10, MAX_POOL_SIZE);
             _muzzlePoint = transform.Find("Muzzle Point");
+        }
+
+        protected virtual void OnDrawGizmosSelected()
+        {
+            Handles.DrawWireDisc(transform.position, transform.forward, Radius);
         }
 
         public abstract void Fire();

@@ -160,6 +160,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _bloodVFX: {fileID: 8812744342321682880, guid: 3bd08c75e84e39241a9fe05ad376a066, type: 3}
+  _deathSFX:
+  - {fileID: 8300000, guid: 05522a5dc2bf0428e9c888c6f93e557e, type: 3}
+  - {fileID: 8300000, guid: 1f8fd39f1e2c847e5a0da81f2dbced32, type: 3}
+  - {fileID: 8300000, guid: 305bf845aa0b04548b91134d1a1818d9, type: 3}
 --- !u!114 &3490957338021449537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,3 +176,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae0379fee57484cadcdea8f56ccac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 1

@@ -40,6 +40,8 @@ namespace SevenTamTest
                 {
                     GetAmmo();
 
+                    StartCoroutine(InstantiateMuzzleFlashVFX());
+
                     yield return _waitBetweenBullets;
                 }
 

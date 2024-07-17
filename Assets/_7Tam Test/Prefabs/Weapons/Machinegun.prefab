@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2052682721428507479
 Transform:
   m_ObjectHideFlags: 0
@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 731794e93b9e9fd40b3bcf7a6c18838e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoPrefab: {fileID: 8074392536129422043, guid: 6561a011374f9934c9fa6dfc502fe4d2, type: 3}
   _fireRate: 2.5
   <IsSingleHanded>k__BackingField: 0
   <Radius>k__BackingField: 4.5
+  _ammoPrefab: {fileID: 8074392536129422043, guid: 6561a011374f9934c9fa6dfc502fe4d2, type: 3}
+  _muzzleFlashPrefab: {fileID: 970766169506856361, guid: fd5a826f1d0bbc544931e864a6f10ec1, type: 3}
   _burstAmount: 6
   _burstSpeed: 45
 --- !u!1 &8765617851953931619

@@ -28,6 +28,8 @@ namespace SevenTamTest
                 GenerateBullet(direction);
             }
 
+            StartCoroutine(InstantiateMuzzleFlashVFX());
+
             Vector3 CalculateDirection(float angleStep, float startAngle, int i)
             {
                 float currentAngle = startAngle + i * angleStep;

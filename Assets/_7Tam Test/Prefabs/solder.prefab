@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1381611203544821436, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1496238354323751324, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
       propertyPath: _muzzleFlashPrefab
@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1531864617421861720, guid: 23369241cfcb2d744b3217d958d8c8eb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1531864617421861721, guid: 23369241cfcb2d744b3217d958d8c8eb, type: 3}
       propertyPath: m_Sprite
@@ -636,6 +636,10 @@ PrefabInstance:
     - target: {fileID: 2052682721428507473, guid: 61aef83f1db505e43aa761b5699b6070, type: 3}
       propertyPath: m_Name
       value: Machinegun
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052682721428507473, guid: 61aef83f1db505e43aa761b5699b6070, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2052682721428507479, guid: 61aef83f1db505e43aa761b5699b6070, type: 3}
       propertyPath: m_RootOrder

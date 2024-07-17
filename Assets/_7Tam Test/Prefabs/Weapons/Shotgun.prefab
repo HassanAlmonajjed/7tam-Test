@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 0b9470a6ae7024979828fb99e5acf2eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8106851fa14714291a7e612710e58fb6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b924002a7e43a134ba48b9dd4c9b2904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoPrefab: {fileID: 2409285717972043967, guid: 59768ac8b58878b4b9b37fcf36b72410, type: 3}
   _fireRate: 0.75
   <IsSingleHanded>k__BackingField: 0
   <Radius>k__BackingField: 3
+  _ammoPrefab: {fileID: 2409285717972043967, guid: 59768ac8b58878b4b9b37fcf36b72410, type: 3}
+  _muzzleFlashPrefab: {fileID: 970766169506856361, guid: fd5a826f1d0bbc544931e864a6f10ec1, type: 3}
   _burstAmount: 5
   _range: 70
 --- !u!1 &8114189317883436394
@@ -128,7 +129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8114189317883436394}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

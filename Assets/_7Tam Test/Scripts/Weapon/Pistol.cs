@@ -26,18 +26,6 @@ namespace SevenTamTest
                     transform.root.rotation);
                 return ammo;
             }
-
-            IEnumerator InstantiateMuzzleFlashVFX()
-            {
-                GameObject vfx = _muzzleFlashPool.Get();
-                vfx.transform.SetPositionAndRotation(
-                    _muzzlePoint.position,
-                    transform.rotation);
-
-                yield return new WaitForSeconds(0.1f);
-
-                _muzzleFlashPool.Release(vfx);
-            }
         }
     }
 }

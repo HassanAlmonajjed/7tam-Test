@@ -98,10 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbaa76de8a86ff468c52175290cee72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoPrefab: {fileID: -7644178622135207977, guid: 644aa9ca3f9495e4ebf9ac86d3cfbf7e, type: 3}
   _fireRate: 2
   <IsSingleHanded>k__BackingField: 1
   <Radius>k__BackingField: 5
+  _ammoPrefab: {fileID: -7644178622135207977, guid: 644aa9ca3f9495e4ebf9ac86d3cfbf7e, type: 3}
+  _muzzleFlashPrefab: {fileID: 970766169506856361, guid: fd5a826f1d0bbc544931e864a6f10ec1, type: 3}
 --- !u!1 &8571857386256482446
 GameObject:
   m_ObjectHideFlags: 0

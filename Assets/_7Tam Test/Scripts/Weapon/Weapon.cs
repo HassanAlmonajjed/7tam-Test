@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -54,6 +55,18 @@ namespace SevenTamTest
 
         [SerializeField] protected GameObject _muzzleFlashPrefab;
         protected IObjectPool<GameObject> _muzzleFlashPool;
+
+        protected IEnumerator InstantiateMuzzleFlashVFX()
+        {
+            GameObject vfx = _muzzleFlashPool.Get();
+            vfx.transform.SetPositionAndRotation(
+                _muzzlePoint.position,
+                transform.rotation);
+
+            yield return new WaitForSeconds(0.1f);
+
+            _muzzleFlashPool.Release(vfx);
+        }
 
         private GameObject CreateMuzzleFlashPooledItem() => Instantiate(_muzzleFlashPrefab);
 

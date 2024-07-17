@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 1162253079002066982}
   - component: {fileID: 1162253079002066981}
   - component: {fileID: 1162253079002066984}
+  - component: {fileID: 1162253079002066988}
   m_Layer: 0
   m_Name: solder
   m_TagString: Untagged
@@ -419,6 +420,18 @@ MonoBehaviour:
   - {fileID: 4431610259877434059}
   _singleHand: {fileID: 21300000, guid: 2e3a23f08f6944f23945e11ee80d68c2, type: 3}
   _dualHand: {fileID: 21300000, guid: 24878a3fc626a4ae892383ad6f590422, type: 3}
+--- !u!114 &1162253079002066988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296917528199387737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b00e5fe11c270584b8c3450f65acfe43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &219936502949641335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -477,6 +490,14 @@ PrefabInstance:
     - target: {fileID: 1381611203544821436, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496238354323751324, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
+      propertyPath: _muzzleFlashPrefab
+      value: 
+      objectReference: {fileID: 970766169506856361, guid: fd5a826f1d0bbc544931e864a6f10ec1, type: 3}
+    - target: {fileID: 1496238354323751324, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
+      propertyPath: <Radius>k__BackingField
+      value: 3.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31e9acd8b0bc7ac4abe4747a7acaf9b4, type: 3}
@@ -562,6 +583,10 @@ PrefabInstance:
     - target: {fileID: 2555511038637031982, guid: 23369241cfcb2d744b3217d958d8c8eb, type: 3}
       propertyPath: _range
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2555511038637031982, guid: 23369241cfcb2d744b3217d958d8c8eb, type: 3}
+      propertyPath: <Radius>k__BackingField
+      value: 3.02
       objectReference: {fileID: 0}
     - target: {fileID: 8970932645474691218, guid: 23369241cfcb2d744b3217d958d8c8eb, type: 3}
       propertyPath: m_LocalRotation.w

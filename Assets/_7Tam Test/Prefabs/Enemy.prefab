@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 7711360716318401832}
   - component: {fileID: 7711360716318401833}
   - component: {fileID: 8375438065726850206}
+  - component: {fileID: 2507215893909225809}
   - component: {fileID: 7711360716318401838}
   - component: {fileID: 894824689420636894}
+  - component: {fileID: 3490957338021449537}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -107,6 +109,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &2507215893909225809
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711360716318401839}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!58 &7711360716318401838
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137,4 +160,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _bloodVFX: {fileID: 8812744342321682880, guid: 3bd08c75e84e39241a9fe05ad376a066, type: 3}
-  _guts: {fileID: 21300000, guid: 0a2faf214049e40adbced366e1487782, type: 3}
+--- !u!114 &3490957338021449537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711360716318401839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bae0379fee57484cadcdea8f56ccac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

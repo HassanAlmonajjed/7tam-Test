@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 1162253079002066988}
   m_Layer: 0
   m_Name: solder
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

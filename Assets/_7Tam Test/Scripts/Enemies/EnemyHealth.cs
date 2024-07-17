@@ -7,12 +7,13 @@ namespace SevenTamTest
         [SerializeField] private int _health;
         [SerializeField] private GameObject _bloodVFX;
 
-        private bool _isDead;
+        public bool IsDead { get; private set; }
+
         public int Health => _health;
 
         public void TakeDamage(int damage)
         {
-            if (_isDead)
+            if (IsDead)
                 return;
 
             _health -= damage;
@@ -23,9 +24,12 @@ namespace SevenTamTest
 
         private void Death()
         {
-            _isDead = true;
+            IsDead = true;
 
-            GetComponent<Animator>().SetBool("IsDead", _isDead);
+            // stop the movement
+            GetComponent<EnemyMovement>().enabled = false;
+
+            GetComponent<Animator>().SetBool("IsDead", IsDead);
             Destroy(gameObject, 2);
             GameObject bloodVfx = Instantiate(_bloodVFX, transform.position, Quaternion.identity);
             Destroy(bloodVfx, 1);

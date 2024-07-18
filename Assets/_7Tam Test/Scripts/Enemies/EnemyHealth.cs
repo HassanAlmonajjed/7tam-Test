@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SevenTamTest
@@ -7,20 +8,54 @@ namespace SevenTamTest
         [SerializeField] private int _health;
         [SerializeField] private GameObject _bloodVFX;
         [SerializeField] private AudioClip[] _deathSFX;
+        [SerializeField] private GameObject _healthBar;
+        [SerializeField] private Transform _fillAmountBar;
 
         public bool IsDead { get; private set; }
+        public int Health => _currentHealth;
 
-        public int Health => _health;
+        private int _currentHealth;
+
+        private IEnumerator _showHealthBarRoutine;
+
+        private void Awake()
+        {
+            _healthBar.SetActive(false);
+            _currentHealth = _health;
+        }
 
         public void TakeDamage(int damage)
         {
             if (IsDead)
                 return;
 
-            _health -= damage;
+            _currentHealth -= damage;
 
-            if (_health < 0)
+            
+
+            if (_currentHealth <= 0)
+            {
+                _healthBar.SetActive(false);
                 Death();
+            }
+
+            else
+            {
+                if(_showHealthBarRoutine != null)
+                    StopCoroutine(_showHealthBarRoutine);
+
+                _showHealthBarRoutine = ShowHealthBar();
+                StartCoroutine(_showHealthBarRoutine);
+            }
+
+            IEnumerator ShowHealthBar()
+            {
+                _healthBar.SetActive(true);
+                float fillAmount = Mathf.Clamp((float)_currentHealth / _health, 0, _health);
+                _fillAmountBar.localScale = new Vector3(fillAmount, 1, 1);
+                yield return new WaitForSeconds(1);
+                _healthBar.SetActive(false);
+            }
         }
 
         private void Death()

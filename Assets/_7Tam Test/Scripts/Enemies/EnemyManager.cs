@@ -33,5 +33,7 @@ namespace SevenTamTest
 
             return closestEnemy;
         }
+
+        public void RemoveEnemy(GameObject enemy) => _enemies.Remove(enemy);
     }
 }

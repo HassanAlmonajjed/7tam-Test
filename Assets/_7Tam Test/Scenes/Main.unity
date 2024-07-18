@@ -5441,6 +5441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1162253078171833035, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1162253079002066981, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
       propertyPath: _boundary.MaxX
       value: 75
@@ -5500,6 +5504,14 @@ PrefabInstance:
     - target: {fileID: 1801859556650008259, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7224932734052397554, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7904569927120289177, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8296917528199387737, guid: 36fbe2074dc10b7449af8a2b0c722bac, type: 3}
       propertyPath: m_Name

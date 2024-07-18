@@ -62,16 +62,15 @@ namespace SevenTamTest
         {
             IsDead = true;
 
-            // stop the movement
-            GetComponent<EnemyMovement>().enabled = false;
+            StopMoving();
 
-            GetComponent<Animator>().SetBool("IsDead", IsDead);
-
-            Destroy(gameObject, 2);
+            PlayDeathAnimation();
 
             InstantiateBloodVFX();
 
             PlayDeathSFX();
+
+            RemoveEnemy();
 
             void PlayDeathSFX()
             {
@@ -83,6 +82,16 @@ namespace SevenTamTest
             {
                 GameObject bloodVfx = Instantiate(_bloodVFX, transform.position, Quaternion.identity);
                 Destroy(bloodVfx, 1);
+            }
+
+            void PlayDeathAnimation() => GetComponent<Animator>().SetBool("IsDead", IsDead);
+
+            void StopMoving() => GetComponent<EnemyMovement>().enabled = false;
+
+            void RemoveEnemy()
+            {
+                Destroy(gameObject, 2);
+                FindObjectOfType<EnemyManager>().RemoveEnemy(gameObject);
             }
         }
     }

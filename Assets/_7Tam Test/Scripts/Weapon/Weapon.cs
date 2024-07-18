@@ -68,7 +68,7 @@ namespace SevenTamTest
             _muzzleFlashPool.Release(vfx);
         }
 
-        private GameObject CreateMuzzleFlashPooledItem() => Instantiate(_muzzleFlashPrefab);
+        private GameObject CreateMuzzleFlashPooledItem() => Instantiate(_muzzleFlashPrefab, transform);
 
         private void OnDestroyMuzzleFlashPoolObject(GameObject muzzleFlashObject) => Destroy(muzzleFlashObject);
 

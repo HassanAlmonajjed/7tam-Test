@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace SevenTamTest
@@ -9,14 +10,22 @@ namespace SevenTamTest
             if (Time.time < _nextFireTime)
                 return;
 
-            Ammo ammo = _ammoPool.Get();
-            ammo.transform.SetPositionAndRotation(
-                _muzzlePoint.position,
-                transform.root.rotation);
-
+            Ammo ammo = InstantiateAmmo();
             ammo.Weapon = this;
 
+            StartCoroutine(InstantiateMuzzleFlashVFX());
+
             _nextFireTime = Time.time + (1 / _fireRate);
+
+            Ammo InstantiateAmmo()
+            {
+                Ammo ammo = _ammoPool.Get();
+
+                ammo.transform.SetPositionAndRotation(
+                    _muzzlePoint.position,
+                    transform.root.rotation);
+                return ammo;
+            }
         }
     }
 }
